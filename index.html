@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <input id="number" type="number" value="4">
+    <br>
+    <button id='start' onclick="randomSequence()">Start</button>
+    <br>
+    <br>
+    <a id='numseq'></a>
+</body>
+
+</html>
+<script>
+    var rand = function() {
+        return Math.floor(Math.random() * 10)
+    }
+
+    function randomSequence() {
+
+        var n = rand();
+        var numArr = [];
+        var inarow = 3;
+        var seq = 1;
+        while (seq < inarow) {
+            var next = rand();
+            if (next == n) {
+                seq++;
+            } else {
+                seq = 1
+            }
+            numArr.push(next);
+            n = next;
+            var numString = numArr.join('');
+            document.getElementById('numseq').innerHTML = numString;
+
+        }
+    }
+
+</script>
